@@ -108,17 +108,22 @@ let userName = "Joe";
 let userAge = 25;
 let userIsLoggedIn = false;
 let userIsBlocked = false;
-let goToPage = "home";
+let goToPage = "";
 
 // Skriv koden for oppgave 4 her
 if (userAge >= 18 && userName !== "" && userIsBlocked === false) {
     userIsLoggedIn = true;
     goToPage = "/home";
     console.log(`Welcome to the site, ${userName}!`);
-} else if (userIsBlocked === false && userAge < 18 && userName !== "") {
+// } else if (userIsBlocked === true || userAge < 18 || userName === "") {
+//     userIsLoggedIn = false;
+//     goToPage = "/blocked";
+//     console.log("You are not old enough to view this content");
+}
+else {
     userIsLoggedIn = false;
-    goToPage = "/blocked";
-    console.log("You are not old enough to view this content");
+    goToPage = "/error";
+    console.log("An error occurred. Please try again later.");
 }
 
 /******************************************************************************
